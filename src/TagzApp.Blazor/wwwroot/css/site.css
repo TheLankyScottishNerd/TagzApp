@@ -1,10 +1,45 @@
+/*Bootstrap Overrides*/
+:root {
+	--bs-primary: #007bff;
+	--bs-secondary: #6c757d;
+	--bs-tertiary: #8d45ad;
+	--bs-success: #28a745;
+	--bs-info: #17a2b8;
+	--bs-warning: #ffc107;
+	--bs-danger: #dc3545;
+	--bs-light: #f8f9fa;
+	--bs-dark: #343a40;
+	--bs-primary-rgb: 0, 123, 255;
+	--bs-secondary-rgb: 108, 117, 125;
+	--bs-success-rgb: 40, 167, 69;
+	--bs-info-rgb: 23, 162, 184;
+	--bs-warning-rgb: 255, 193, 7;
+	--bs-danger-rgb: 220, 53, 69;
+	--bs-light-rgb: 248, 249, 250;
+	--bs-dark-rgb: 52, 58, 64;
+	--bs-body-color: #212529;
+	--bs-body-bg: rgba(255, 255, 255, 0.75);
+}
+
 html {
-	font-size: 14px;
+	position: relative;
+	min-height: 100%;
+	background: rgb(26, 188, 156);
+	background: -moz-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+	background: linear-gradient(135deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+	font-size: 12px;
 }
 
 @media (min-width: 768px) {
 	html {
-		font-size: 16px;
+		font-size: 12px;
+	}
+}
+
+@media (min-width: 1024px) {
+	html {
+		font-size: 14px;
 	}
 }
 
@@ -18,13 +53,24 @@ html {
 		0 0 0 0.25rem #258cfb;
 }
 
-html {
-	position: relative;
-	min-height: 100%;
+body {
+	margin: 0px 0px 0px 0px;
+	background-color: transparent;
 }
 
-body {
-	margin-bottom: 60px;
+main {
+		padding: 15px;
+		border-radius: 30px;
+		background-color: var(--bs-body-bg);
+}
+
+.logo img {
+		position: absolute;
+		max-width: 200px;
+}
+
+nav {
+		margin: 10px 20px 0px 20px;
 }
 
 #taggedContent {
@@ -669,3 +715,4 @@ a {
 	background-size: contain;
 	filter: brightness(0) invert(1);
 }
+

@@ -16,6 +16,9 @@ public static class Service_Extensions
 		// TODO: Convert to a notification pipeline
 		services.AddSingleton<INotifyNewMessages, SignalRNotifier>();
 
+		// add the theme manager service
+		services.AddSingleton<ThemeManagerService>();
+
 		services.AddMemoryCache();
 
 		// Get the content configuration bits

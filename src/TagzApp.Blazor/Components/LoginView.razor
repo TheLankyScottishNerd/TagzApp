@@ -34,15 +34,20 @@
 		</div>
 	</Authorized>
 	<NotAuthorized>
-		<div class="nav-item px-3">
-			<NavLink class="nav-link" href="Account/Register">
-				<span class="bi bi-person-nav-menu" aria-hidden="true"></span> Register
-			</NavLink>
+        <div class="nav-item px-3">
+			<button class="w-100 btn btn-md btn-toolbar">
+				<NavLink class="nav-link" href="Account/Register">
+				<i class=" bi-person-plus-fill" aria-hidden="true"></i> Register
+                </NavLink>
+            </button>
 		</div>
 		<div class="nav-item px-3">
+			<button class="w-100 btn btn-md btn-dark">
+			
 			<NavLink class="nav-link" href="Account/Login">
-				<span class="bi bi-person-badge-nav-menu" aria-hidden="true"></span> Login
-			</NavLink>
+				<span class="bi-person-badge" aria-hidden="true"></span> Login
+                </NavLink>
+            </button>
 		</div>
 	</NotAuthorized>
 </AuthorizeView>

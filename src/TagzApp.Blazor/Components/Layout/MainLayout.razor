@@ -2,10 +2,6 @@
 @inject NavigationManager NavMgr
 @inherits LayoutComponentBase
 
-<HeadContent>
-	<meta name="color-scheme" content="light dark">
-</HeadContent>
-
 <Header />
 
 <div class="container">
@@ -20,6 +16,8 @@
 
 	</main>
 </div>
+
+<NavigationMenu />
 
 @* Hide the footer if the page is Moderation *@
 @if (!NavMgr.Uri.Contains("/Moderation"))

@@ -1,0 +1,83 @@
+﻿.toolbar {
+	position: fixed;
+	bottom: 40px;
+	left: 50px;
+}
+
+.wrapper {
+	width: 100%;
+	border-radius: 30px;
+	height: 50px;
+	background: rgb(255, 255, 255,0.750);
+	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.281);
+	padding-left: 65px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	z-index: 5;
+	transition: all 0.5s ease;
+}
+
+.playPauseButton {
+	width: 70px;
+	height: 70px;
+	position: fixed;
+	margin: -10px 0 0 -5px;
+	border-radius: 50%;
+	background-color: var(--bs-tertiary);
+	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.281);
+	z-index: 100;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+	.playPauseButton:hover {
+		background: var(--bs-secondary);
+	}
+
+.item {
+	padding-left: 15px;
+	padding-right: 20px;
+	cursor: pointer;
+}
+
+	.item i {
+		font-size: 16px;
+		color: var(--bs-secondary);
+	}
+
+	.item i:hover {
+		color: var(--bs-tertiary);
+	}
+
+.waterfall {
+	display: grid;
+	grid-template-columns: repeat(3, 5px);
+	grid-auto-rows: 5px;
+	grid-gap: 4px;
+	transition: all 0.5s ease-in-out;
+}
+
+	.waterfall .dot {
+		width: 7px;
+		border-radius: 35%;
+		background: var(--bs-secondary);
+		border: 1px solid rgba(0, 0, 0, 0.5);
+		transition: all 0.5s ease-in-out;
+	}
+
+	.waterfall:hover .dot {
+		background: var(--bs-tertiary);
+		border: 1px solid rgba(0, 0, 0, 0.0);
+		transform: translateY(-4px);
+	}
+
+.settings {
+	width: 100%;
+	transition: all 0.5s ease-in-out;
+}
+
+	.settings:hover {
+		transform: scale(1.1);
+		
+	}

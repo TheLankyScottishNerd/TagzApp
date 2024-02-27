@@ -59,6 +59,7 @@ else
 		{
 			_Content.Add(content.Timestamp, content);
 		}
+		
 
 		await base.OnInitializedAsync();
 
@@ -73,7 +74,7 @@ else
 		}
 
 		await JSRuntime.InvokeVoidAsync("window.Masonry.setupPage");
-
+		StateHasChanged();
 		await base.OnAfterRenderAsync(firstRender);
 
 	}

@@ -20,10 +20,11 @@
 		},
 		{
 			"provider": "jsdelivr",
-			"library": "bootstrap-dark-5@1.1.3",
-			"destination": "wwwroot/lib/bootstrap-dark-5/",
+			"library": "bootstrap@5.3.3",
+			"destination": "wwwroot/lib/bootstrap/",
 			"files": [
-				"dist/css/bootstrap-dark.min.css"
+				"dist/css/bootstrap.min.css",
+				"dist/js/bootstrap.bundle.min.js"
 			]
 		},
 		{

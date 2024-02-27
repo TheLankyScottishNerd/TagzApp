@@ -3,23 +3,36 @@
 @inject IAuthorizationService AuthorizationService
 @inject ApplicationConfiguration AppConfiguration
 
-
 <header>
-	<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 bg-body">
-		<div class="container">
-			<a class="navbar-brand" href="/">@AppConfiguration.SiteName</a>
+	<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-4  rounded-3 bg-opacity-75">
+		<div class="container-fluid">
+
+            <a class="navbar-brand" href="/">@*<b>@AppConfiguration.SiteName</b> *@
+
+			<div class="logo">
+				<img src="/img/logo.webp" width="200" />
+                </div>
+            </a>
+              
 
 			@if (ConfigureTagzAppFactory.IsConfigured)
 			{
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-								aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse"
+						data-bs-target=".navbar-collapse"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation">
+
 					<span class="navbar-toggler-icon"></span>
+
 				</button>
-				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-					<ul class="navbar-nav flex-grow-1">
+
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
+					<ul class="navbar-nav flex-grow-1 justify-content-center gap-3">
 
 						<li class="nav-item">
-							<NavLink class="nav-link" href="/Waterfall">Waterfall</NavLink>
+							<NavLink class="nav-link" href="/Waterfall"><i class="bi-water"/>Waterfall</NavLink>
 						</li>
 
 						@if (AppConfiguration.ModerationEnabled)
@@ -41,17 +54,20 @@
 						</li>
 					</ul>
 
-					<LoginView />
+
+
+                    <LoginView />
 
 				</div>
 			}
 
 		</div>
 	</nav>
+
 </header>
 @code {
 
-	[CascadingParameter]
-	private HttpContext HttpContext { get; set; } = default!;
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
 
 }

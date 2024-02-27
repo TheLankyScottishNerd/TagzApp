@@ -1,7 +1,9 @@
-﻿<footer class="border-top footer text-muted text-center">
-		&copy; 2023 - TagzApp.Web -
-		<a href="/Privacy">Privacy</a> -
-		Running on .NET @fxVersion -
+﻿@inject ApplicationConfiguration AppConfiguration
+
+<footer class="card-footer fixed-bottom align-center text-end pe-3 pb-3 shadow-sm text-white-50 text-sm-end">
+	&copy; 2023 - <b>@AppConfiguration.SiteName</b> -
+		<a href="/Privacy">Privacy Policy</a>  -
+	Running on .NET @fxVersion <strong><i class="bi-heart-pulse-fill" /></strong> -
 		<a target="_blank" href="https://github.com/FritzAndFriends/TagzApp">Source Code</a>
 </footer>
 

@@ -1,27 +1,57 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@inject ThemeManagerService ThemeManager
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<base href="/" />
-	<link rel="stylesheet" href="/lib/bootstrap-dark-5/dist/css/bootstrap-dark.min.css">
-	<link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
-	<link rel="stylesheet" href="TagzApp.Blazor.styles.css" />
-	<link rel="stylesheet" href="/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
-	<link rel="stylesheet" href="/_content/TagzApp.Providers.Blazot/css/blazot.css" />
-	<HeadOutlet />
-</head>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="@theme">
 
-<body>
-	<Routes />
-	<script src="_framework/blazor.web.js"></script>
-	<script src="/lib/jquery/dist/jquery.min.js"></script>
-	<script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="/lib/microsoft-signalr/signalr.min.js"></script>
-	<script src="/js/masonry.js"></script>
-	<script src="/js/waterfall.js"></script>
+	<head>
+		@*Site Base URL, Character Encoding and Viewport Details*@
+		<base href="/" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+		@*Bootstrap CSS Resources (These are provided using libman and the official bootstrap repositories*@
+		<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
+		
+		<link rel="stylesheet" href="TagzApp.Blazor.styles.css" />
+		<link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
 
-</body>
+		@*Provider CSS Includes*@
+		<link rel="stylesheet" href="/_content/TagzApp.Providers.Blazot/css/blazot.css" />
+	
+		@*HeadOutlet used as a section placeholder for script and meta tag injection in Layouts*@
+		<HeadOutlet />
+
+	</head>
+
+	<body>
+
+		<Routes />
+
+		@*Script Resources*@
+		<script src="_framework/blazor.web.js"></script>
+
+		@*SignalR JS Resources (These are provided using libman and the official Microsoft repositories*@
+		<script src="/lib/microsoft-signalr/signalr.min.js"></script>
+    
+		@*Bootstrap JS Resources (These are provided using libman and the official bootstrap repositories*@
+		<script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+		<script src="/lib/jquery/dist/jquery.min.js"></script>
+		<script src="/js/masonry.js"></script>
+		<script src="/js/waterfall.js"></script>
+
+	</body>
 
 </html>
+
+@code
+{
+	private string theme { get; set; } = default!;
+
+	protected override async Task OnInitializedAsync()
+    {
+        theme = ThemeManager.CurrentTheme;
+		await base.OnInitializedAsync();
+    }
+}

@@ -113,9 +113,8 @@ public class TwitchChatProvider : ISocialMediaProvider, IDisposable
 	public Task<IEnumerable<Content>> GetContentForHashtag(Hashtag tag, DateTimeOffset since)
 	{
 
-		if (!_Client.IsRunning)
+		if (_Client is not null && !_Client.IsRunning)
 		{
-
 			// mark status as unhealthy and return empty list
 			_Status = SocialMediaStatus.Unhealthy;
 			_StatusMessage = "TwitchChat client is not running";
@@ -124,7 +123,7 @@ public class TwitchChatProvider : ISocialMediaProvider, IDisposable
 
 		}
 
-		if (!_Client.IsConnected)
+		if (_Client is not null && !_Client.IsConnected)
 		{
 
 			// mark status as unhealthy and return empty list
